@@ -1,0 +1,50 @@
+<div class="topbar"></div>
+<header class="site-header">
+  <div class="wrap head-inner">
+    <a class="brand" href="/" aria-label="Car Crash Plus home">
+      <img class="brand-wordmark" src="/carcrash-wordmark.svg" alt="Car Crash Plus" width="220" height="52" />
+    </a>
+    <nav aria-label="Main navigation">
+      <a href="/research/">Research</a>
+      <a href="/arizona/">Arizona</a>
+      <a href="/resources/">Resources</a>
+      <a href="/attorneys/">Directory</a>
+      <div class="media-nav" id="media-nav">
+        <a href="/media/">Media</a>
+        <button type="button" class="media-nav-toggle" aria-label="Show media sections" aria-expanded="false" aria-controls="media-submenu"><svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="media-submenu" id="media-submenu">
+          <a href="/research/">Data &amp; Research</a>
+          <a href="/media/">Media Resources</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+<script is:inline>
+(() => {
+  const nav=document.getElementById('media-nav'),button=nav?.querySelector('.media-nav-toggle');
+  if(!nav||!button)return;
+  const close=()=>{nav.classList.remove('expanded');button.setAttribute('aria-expanded','false')};
+  button.addEventListener('click',()=>{const open=nav.classList.toggle('expanded');button.setAttribute('aria-expanded',String(open))});
+  document.addEventListener('pointerdown',e=>{if(!nav.contains(e.target))close()});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'){close();button.focus()}});
+})();
+</script>
+<style>
+/* Media has the same baseline, typography and treatment as the other main links. */
+.site-header nav{align-items:center}
+.media-nav{position:relative;display:inline-flex;align-items:center;gap:3px}
+.site-header nav .media-nav>a{display:inline;color:#fff;font-size:13px;font-weight:400;line-height:1.65;text-decoration:none;padding:0}
+.site-header nav .media-nav>a:hover{color:#afcaff}
+.media-nav-toggle{border:0;background:none;color:#fff;cursor:pointer;display:inline-grid;place-items:center;padding:0;width:17px;height:20px;line-height:1;flex:none}
+.media-nav-toggle svg{display:block;width:12px;height:12px;transition:transform .15s}
+.media-nav.expanded .media-nav-toggle svg{transform:rotate(180deg)}
+.media-nav-toggle:hover{color:#afcaff}
+.media-nav-toggle:focus-visible,.media-nav>a:focus-visible{outline:2px solid #b887ff;outline-offset:4px}
+.media-submenu{display:none;position:absolute;z-index:30;top:calc(100% + 10px);right:0;min-width:188px;padding:6px 0;background:#fff;border:1px solid var(--line);box-shadow:0 10px 26px rgba(8,19,50,.2)}
+.media-nav:hover .media-submenu,.media-nav:focus-within .media-submenu,.media-nav.expanded .media-submenu{display:block}
+.media-submenu:before{content:"";position:absolute;height:11px;top:-11px;left:0;right:0}
+.site-header nav .media-submenu a{display:block;color:var(--blue);padding:10px 14px;text-decoration:none;font-size:13px;font-weight:600;white-space:nowrap}
+.site-header nav .media-submenu a:hover,.site-header nav .media-submenu a:focus-visible{background:var(--mist);color:var(--blue)}
+@media(prefers-reduced-motion:reduce){.media-nav-toggle svg{transition:none}}
+</style>
