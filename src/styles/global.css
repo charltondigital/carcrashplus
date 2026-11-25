@@ -346,3 +346,7 @@ a:hover{color:#065f46}
 @media(max-width:620px){.wrap{margin-left:14px;margin-right:14px}.site-header nav{justify-content:flex-start}.site-header nav>a{min-height:44px}.home-button{min-height:48px}.footer-group a{min-height:32px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
 @media(forced-colors:active){.home-button,.media-nav-toggle{border:2px solid ButtonText}.research-bar{background:Highlight;forced-color-adjust:none}}
+
+/* Homepage photograph: green overlay, heavier behind the headline for legibility. */
+.home-hero{background-color:#087052;background-image:linear-gradient(100deg,rgba(4,70,48,.89) 0%,rgba(5,93,63,.76) 48%,rgba(0,105,70,.48) 100%),url('/crash-hero.webp');background-size:cover;background-position:center center;background-repeat:no-repeat}
+@media(max-width:850px){.home-hero{background-image:linear-gradient(100deg,rgba(4,70,48,.90),rgba(5,93,63,.78)),url('/crash-hero.webp');background-position:32% center}}
