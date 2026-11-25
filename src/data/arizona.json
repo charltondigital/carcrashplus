@@ -1,0 +1,32 @@
+{
+  "year": 2025,
+  "source": "Arizona Department of Transportation, August 27, 2026",
+  "url": "https://azdot.gov/news/traffic-fatalities-arizona-roads-decline-third-year-row",
+  "metrics": [
+    {
+      "label": "Reported crashes",
+      "value": 118052,
+      "previous": 123535
+    },
+    {
+      "label": "People killed",
+      "value": 1156
+    },
+    {
+      "label": "Pedestrian crashes",
+      "value": 1999
+    },
+    {
+      "label": "Bicyclist crashes",
+      "value": 1640
+    },
+    {
+      "label": "Motorcyclist fatalities",
+      "value": 194
+    },
+    {
+      "label": "Speed-related fatalities",
+      "value": 367
+    }
+  ]
+}
