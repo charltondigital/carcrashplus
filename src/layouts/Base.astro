@@ -23,4 +23,4 @@ const seoDescription=description;
 <meta property="og:url" content={canonical}/>
 <meta name="twitter:card" content="summary"/>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
-<title>{seoTitle}</title></head><body><Header/><main><slot/></main><Footer/></body></html>
+<title>{seoTitle}</title></head><body><a class="skip-link" href="#main-content">Skip to main content</a><Header/><main id="main-content" tabindex="-1"><slot/></main><Footer/></body></html>
